@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="login-form-container">
+
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm" class="login-form" id="login-form">
+        
+        <div class="l-form">
+          <label for="name">Email</label>
+          <input type="text" [(ngModel)]="user.email" 
+            name="email"
+            placeholder="Email"
+            required #login="ngModel">
+        </div>
+        <div class="l-form">
+          <label for="password">Password</label>
+          <input type="password" [(ngModel)]="user.password"  
+            name="password"
+            placeholder="Password"
+            required #password="ngModel">
+        </div>
+        <button type="submit" id="form-button" class="l-form" (click)="onSubmit()">Sign in</button>
+    </form>
+
+      <p class="l-form" id="registration"><a routerLink="/register">Registration</a></p>
+
+</div>

@@ -1,0 +1,42 @@
+.about-content {
+    width: 70%;
+    font-size: 1.3rem;
+    margin: auto;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.reviews-slider {
+    background-color: green;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 1.5rem;
+}
+.reviews-slider > p {
+    width: 70%;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.contact-info-container {
+    width: 90%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    
+}
+.contact-info-container-item{
+    width: 50%;
+   
+}
+#contact-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
