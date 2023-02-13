@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="sections-containers">
+<div class="rent-form">
+  <form>
+    <p class="rent-form-item">{{specification.brand}} {{specification.model}}</p>
+    <app-car-booking-calendar (dateOfRent)="getDateOfRent($event)"></app-car-booking-calendar>
+    <div id="rent-form-menu">
+      <select class="rent-form-item" (change)="getDateOfReturn($event)">
+        <option hidden>Click to choose</option>
+        <option *ngFor="let days of daysToSelect | keyvalue" [value]="days.key" [selected]="days===rentTime">{{days.key}} {{days.value}}</option>
+      </select>
+    </div>
+    <button class="rent-form-item" (click)="checkAvailability()">Check Availabilty</button>
+  
+  <app-messages></app-messages>
+  <div id="add-rent-button"><button class="rent-form-item" [hidden]="isAnyCar == false" (click)="addNewRent()">Rent</button></div>
+</form>
+</div>
+</div>

@@ -4,18 +4,20 @@
     }
  }
 
- html, body{
+ html , body {
     background-color: rgb(166, 244, 245);
     margin: 0px;
     font-size: 20px;
     padding: 0;
  }
- body { 
+ body  { 
     overflow: auto;
     overflow-x: hidden;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
  }
+
+
  .website-wrapper {
     width: 100%;
     display: flex;
@@ -106,3 +108,5 @@ header {
     align-items: center;
     justify-content: center;
 }
+
+

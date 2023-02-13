@@ -16,11 +16,14 @@ import { ContentSliderComponent } from './components/content-slider/content-slid
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input'
 
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { CarBookingComponent } from './components/car-booking/car-booking.component';
+import { CarBookingCalendarComponent } from './components/car-booking-calendar/car-booking-calendar.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     ImageComponent,
     HeaderComponent,
     ContentSliderComponent,
-    CalendarComponent,
+    CarBookingComponent,
+    CarBookingCalendarComponent,
+    MessagesComponent,
 
   ],
   imports: [
@@ -43,10 +48,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     HttpClientModule,
     RouterModule,
     MatDatepickerModule,       
-    MatNativeDateModule,        
+    MatNativeDateModule,     
+    MatFormFieldModule,   
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

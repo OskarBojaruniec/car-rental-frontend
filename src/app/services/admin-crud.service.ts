@@ -7,28 +7,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminCrudService {
- 
+
   constructor(private http: HttpClient) { }
 
   url: string = 'http://localhost:8080/';
 
-  getListOfItems<T>(model: T, className: string): Observable<T[]> {
-    return this.http.get<T[]>(this.url + className);
+  getListOfItems<T>(model: T, modelURL: string): Observable<T[]> {
+    return this.http.get<T[]>(this.url + modelURL);
   }
 
-  getItemById<T>(model: T, id: any, className: string): Observable<T> { 
-    return this.http.get<T>(this.url + className + '/' + id);
-  }
-  
-  add<T>(model: T, className: string): Observable<T> {
-    return this.http.post<T>(this.url + className, model);
+  getItemById<T>(model: T, id: any, modelURL: string): Observable<T> {
+    return this.http.get<T>(this.url + modelURL + '/' + id);
   }
 
-  update<T>(model: T, className: string): Observable<T> {
-    return this.http.put<T>(this.url + className, model);
+  add<T>(model: T, modelURL: string): Observable<T> {
+    return this.http.post<T>(this.url + modelURL, model);
   }
-  
-  delete<T>(id: number, className: string): Observable<T>{
-    return this.http.delete<T>(this.url + className + '/' + id);
+
+  update<T>(model: T, modelURL: string): Observable<T> {
+    return this.http.put<T>(this.url + modelURL, model);
+  }
+
+  delete<T>(id: number, modelURL: string): Observable<T> {
+    return this.http.delete<T>(this.url + modelURL + '/' + id);
   }
 }
