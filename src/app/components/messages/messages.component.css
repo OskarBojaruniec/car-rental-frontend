@@ -1,0 +1,11 @@
+.message-positive {
+    color: greenyellow;
+}
+
+.message-negative {
+    color: red;
+}
+
+#message {
+    padding-top: 1rem;
+}

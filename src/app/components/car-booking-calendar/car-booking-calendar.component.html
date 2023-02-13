@@ -1,0 +1,5 @@
+<mat-form-field appearance="fill" class="rent-form-item">
+  <input [readonly]="true" matInput [matDatepicker]="picker" class="rent-form-item" (dateChange)="getDateOfRent($event) ">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
