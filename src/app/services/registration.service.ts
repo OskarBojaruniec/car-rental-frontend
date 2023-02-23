@@ -12,6 +12,6 @@ export class RegistrationService {
   constructor(private http: HttpClient) { }
 
   public save(userCredits: RegistrationDto) {
-    return this.http.post<RegistrationDto>(this.registrationUrl, userCredits)
+    return this.http.post<RegistrationDto>(this.registrationUrl, userCredits, {withCredentials: true})
    }
 }
