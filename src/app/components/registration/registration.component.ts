@@ -18,7 +18,7 @@ export class RegistrationComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    const contact = document.getElementById("registration-form")
+    const contact = document.getElementById("r-form")
 
     if(contact != null){
       contact.scrollIntoView({

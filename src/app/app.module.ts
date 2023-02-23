@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ContentComponent } from './components/content/content.component';
 import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ImageComponent } from './image/image.component';
 import { HeaderComponent } from './components/header/header.component';
 import { Router } from '@angular/router';
@@ -24,6 +24,10 @@ import { MatInputModule } from '@angular/material/input'
 import { CarBookingComponent } from './components/car-booking/car-booking.component';
 import { CarBookingCalendarComponent } from './components/car-booking-calendar/car-booking-calendar.component';
 import { MessagesComponent } from './components/messages/messages.component';
+
+import { HttpInterceptor } from '@angular/common/http';
+import { HttpClientXsrfModule } from '@angular/common/http';
+import { CustomInterceptor } from 'src/custom-interceptor';
 
 
 @NgModule({
@@ -52,9 +56,10 @@ import { MessagesComponent } from './components/messages/messages.component';
     MatFormFieldModule,   
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientXsrfModule,
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
