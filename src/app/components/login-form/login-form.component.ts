@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginDto } from '../../models/login-dto';
 import { Location } from '@angular/common';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -10,7 +11,7 @@ export class LoginFormComponent implements OnInit {
 
   user: LoginDto;
 
-  constructor(private location: Location) {
+  constructor(private location: Location, private authService: AuthServiceService) {
     this.user = new LoginDto();
    }
 
@@ -27,7 +28,8 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.location.back();
+    this.authService.login(this.user.email, this.user.password).subscribe(res => console.log(res));
+    
   }
 
 }

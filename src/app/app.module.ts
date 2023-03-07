@@ -28,6 +28,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { HttpInterceptor } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 import { CustomInterceptor } from 'src/custom-interceptor';
+import { LoginInterceptor } from 'src/login-interceptor';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { CustomInterceptor } from 'src/custom-interceptor';
     MatInputModule,
     HttpClientXsrfModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true }],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true },
+  {provide: HTTP_INTERCEPTORS,useClass: LoginInterceptor,multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
