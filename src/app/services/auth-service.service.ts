@@ -7,7 +7,8 @@ import { map } from "rxjs/operators"
 })
 export class AuthServiceService {
 
-  USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser';
+  USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUserMail';
+  USER_NAME_SESSION_ATTRIBUTE_PASSWORD = 'authenticatedUserPass';
 
   public email: String;
   public password: String;
@@ -19,20 +20,21 @@ export class AuthServiceService {
     
     return this.http.get(`http://localhost:8080/login`,
       { headers: { authorization: this.createBasicAuthToken(email, password) } }).pipe(map((res) => {
-        console.log(res);
         this.email = email;
         this.password = password;
-        this.successfulLogin(email);
+        this.successfulLogin(email, password);
       }));
   }
 
   createBasicAuthToken(email: String, password: String) {
-    console.log(email)
+    
     return 'Basic ' + window.btoa(email + ":" + password)
   }
 
-  successfulLogin(email) {
+  successfulLogin(email, password) {
     sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME, email)
+    sessionStorage.setItem(this.USER_NAME_SESSION_ATTRIBUTE_PASSWORD, password)
+
   }
 
   logout() {

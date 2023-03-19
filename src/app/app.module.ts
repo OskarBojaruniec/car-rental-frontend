@@ -9,7 +9,6 @@ import { ContentComponent } from './components/content/content.component';
 import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ImageComponent } from './image/image.component';
 import { HeaderComponent } from './components/header/header.component';
 import { Router } from '@angular/router';
 import { ContentSliderComponent } from './components/content-slider/content-slider.component';
@@ -29,6 +28,7 @@ import { HttpInterceptor } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 import { CustomInterceptor } from 'src/custom-interceptor';
 import { LoginInterceptor } from 'src/login-interceptor';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -37,12 +37,12 @@ import { LoginInterceptor } from 'src/login-interceptor';
     LoginFormComponent,
     ContentComponent,
     RegistrationComponent,
-    ImageComponent,
     HeaderComponent,
     ContentSliderComponent,
     CarBookingComponent,
     CarBookingCalendarComponent,
     MessagesComponent,
+    ProfileComponent,
 
   ],
   imports: [

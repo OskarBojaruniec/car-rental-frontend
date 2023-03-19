@@ -1,17 +1,26 @@
-
 <div class="website-wrapper">
 
     <header>
         <div class="header-logo">
             <p>CarRentalApp</p>
         </div>
-        
+
         <div class="header-nav">
-            <li class="header-nav-items"><a routerLink="/home" (click)="goAbout()" class="header-nav-items-href">O nas</a></li>
-            <li class="header-nav-items"><a routerLink="/home" (click)="goCars()" class="header-nav-items-href">Flota</a></li>
-            <li class="header-nav-items"><a routerLink="/home" (click)="goContact()" class="header-nav-items-href">Kontakt</a></li>
-            <li class="header-nav-items"><a routerLink="/login" class="header-nav-items-href">Zaloguj się</a></li>
+            <li class="header-nav-items"><a routerLink="/home" (click)="goAbout()"
+                    class="header-nav-items-href">About</a></li>
+            <li class="header-nav-items"><a routerLink="/home" (click)="goCars()" class="header-nav-items-href">Cars</a>
+            </li>
+            <li class="header-nav-items"><a routerLink="/home" (click)="goContact()"
+                    class="header-nav-items-href">Contact</a></li>
+
+            <li *ngIf="isLogged == false" class="header-nav-items"><a routerLink="/login"
+                    class="header-nav-items-href">Sign in</a></li>
+
+
+            <li *ngIf="isLogged == true" class="header-nav-items"><a routerLink="/profile" class="header-nav-items-href">Profile</a></li>
+            <li *ngIf="isLogged == true" class="header-nav-items"><a routerLink="/" (click)="logout()" class="header-nav-items-href">Logout</a></li>
+
         </div>
     </header>
-  
-  </div>
+
+</div>
