@@ -1,14 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
-  constructor(private viewportScroller: ViewportScroller) {}
+  isLogged:boolean = false;
+
+  ngOnInit(): void {
+    this.switchFromSingInToLogout();
+  }
+
+  constructor(private viewportScroller: ViewportScroller,
+    private router: Router,
+    private authService: AuthServiceService) {}
 
   goAbout() {
     const about = document.getElementById("about")
@@ -45,6 +55,17 @@ export class HeaderComponent {
         inline: "nearest"
       });
   }
+  }
+
+  switchFromSingInToLogout() {
+    this.isLogged = this.authService.isUserLoggedIn();
+  }
+
+  logout() {
+    this.authService.logout();
+    location.replace("/")
+    
+    
   }
 
 }
