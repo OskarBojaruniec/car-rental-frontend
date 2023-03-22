@@ -1,6 +1,7 @@
 .sub-item {
     display: none;
 }
+
 .main-item:hover .sub-item {
     display: block;
 }

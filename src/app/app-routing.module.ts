@@ -9,12 +9,12 @@ import { RegistrationComponent } from './components/registration/registration.co
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginFormComponent},
-  { path: 'home', component: ContentComponent},
-  { path: 'register', component: RegistrationComponent},
-  { path: 'booking/:id', component: CarBookingComponent},
-  { path: 'profile', component: ProfileComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full'}
+  { path: 'login', component: LoginFormComponent },
+  { path: 'home', component: ContentComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'booking/:id', component: CarBookingComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

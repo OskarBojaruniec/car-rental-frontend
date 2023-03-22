@@ -52,16 +52,16 @@ import { ProfileComponent } from './components/profile/profile.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    MatDatepickerModule,       
-    MatNativeDateModule,     
-    MatFormFieldModule,   
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
     HttpClientXsrfModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true },
-  {provide: HTTP_INTERCEPTORS,useClass: LoginInterceptor,multi: true}],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

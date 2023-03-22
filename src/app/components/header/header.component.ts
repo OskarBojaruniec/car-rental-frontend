@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
-  isLogged:boolean = false;
+  isLogged: boolean = false;
 
   ngOnInit(): void {
     this.switchFromSingInToLogout();
@@ -18,43 +18,43 @@ export class HeaderComponent implements OnInit{
 
   constructor(private viewportScroller: ViewportScroller,
     private router: Router,
-    private authService: AuthServiceService) {}
+    private authService: AuthServiceService) { }
 
   goAbout() {
     const about = document.getElementById("about")
 
-    if(about != null){
+    if (about != null) {
       about.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
-  }
+    }
   }
 
   goCars() {
     const cars = document.getElementById("cars")
 
-    if(cars != null){
+    if (cars != null) {
       cars.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
-  }
+    }
   }
 
   goContact() {
-    
+
     const contact = document.getElementById("contact")
 
-    if(contact != null){
+    if (contact != null) {
       contact.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
-  }
+    }
   }
 
   switchFromSingInToLogout() {
@@ -64,8 +64,8 @@ export class HeaderComponent implements OnInit{
   logout() {
     this.authService.logout();
     location.replace("/")
-    
-    
+
+
   }
 
 }

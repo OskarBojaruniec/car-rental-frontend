@@ -33,8 +33,8 @@ export class ContentSliderComponent implements OnInit {
 
   getSpecifications() {
     this.crudService.getListOfItems(Specification, this.specificationURL).subscribe(res => {
-      
-      const retrieviedSpecResp:any[] = res;
+
+      const retrieviedSpecResp: any[] = res;
 
       for (let index = 0; index < retrieviedSpecResp.length; index++) {
 
@@ -45,13 +45,13 @@ export class ContentSliderComponent implements OnInit {
         let horsePower: number = retrieviedSpecResp[index].horsePower;
         let seatsNumber: number = retrieviedSpecResp[index].seatsNumber;
         let image: any = retrieviedSpecResp[index].image;
-       
+
         this.specifications.push(new Specification(id, brand, model, engineCapacity, horsePower, seatsNumber,
           image));
       }
       this.getImages();
     });
-  
+
   }
 
   displaySpecification() {
@@ -76,8 +76,8 @@ export class ContentSliderComponent implements OnInit {
   getImages() {
 
     this.crudService.getListOfItems(Image, this.imageURL).subscribe(res => {
-      const retrieveResponse:any[] = res;
-      
+      const retrieveResponse: any[] = res;
+
       for (let index = 0; index < retrieveResponse.length; index++) {
 
         let id: number = retrieveResponse[index].id;

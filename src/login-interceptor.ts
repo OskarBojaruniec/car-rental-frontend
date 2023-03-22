@@ -15,7 +15,7 @@ export class LoginInterceptor implements HttpInterceptor {
             const authReq = req.clone({
                 headers: new HttpHeaders({
                     'Content-Type': 'application/json',
-                    'Authorization': `Basic ${window.btoa(sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME)+ ":" + sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_PASSWORD))}`
+                    'Authorization': `Basic ${window.btoa(sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_NAME) + ":" + sessionStorage.getItem(this.USER_NAME_SESSION_ATTRIBUTE_PASSWORD))}`
                 })
             });
             return next.handle(authReq);

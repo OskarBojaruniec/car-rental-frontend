@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Car } from 'src/app/models/car';
 import { AdminCrudService } from 'src/app/services/admin-crud.service';
-import { ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Specification } from 'src/app/models/specification';
 import { RentDto } from 'src/app/models/rent-dto';
 import { HttpResponse } from '@angular/common/http';
@@ -14,10 +14,10 @@ import { MessagesService } from 'src/app/services/messages.service';
   templateUrl: './car-booking.component.html',
   styleUrls: ['./car-booking.component.css'],
   encapsulation: ViewEncapsulation.None
-  
+
 })
 export class CarBookingComponent implements OnInit {
-  
+
   daysToSelect: Map<number, string>;
 
   specification: any;
@@ -32,7 +32,7 @@ export class CarBookingComponent implements OnInit {
   car: any;
   isAnyCar = false;
 
-  constructor(private crudService: AdminCrudService, 
+  constructor(private crudService: AdminCrudService,
     private route: ActivatedRoute,
     private messagesService: MessagesService,
     private router: Router) { }
@@ -54,7 +54,7 @@ export class CarBookingComponent implements OnInit {
 
   getNameOfCarBySpec() {
     this.crudService.getItemById(Specification, this.specId, this.specURL)
-    .subscribe(specification => this.specification = specification);
+      .subscribe(specification => this.specification = specification);
   }
 
   getDateOfRent($event) {
@@ -63,16 +63,16 @@ export class CarBookingComponent implements OnInit {
 
   getDateOfReturn(event: any): void {
     const timeOfRent: any = event.target.value;
-    
+
     const dateOfRent = new Date(this.dateOfRent);
     const dateOfReturn = new Date(this.dateOfRent);
     dateOfReturn.setDate(dateOfRent.getDate() + parseInt(timeOfRent));
-   
+
     this.dateOfReturn = dateOfReturn.toJSON();
   }
 
   checkAvailability() {
-    this.rentToAdd = new RentDto(this.specId, 0, 0, this.dateOfRent, this.dateOfReturn); //until security is not configured userId is hardcoded
+    this.rentToAdd = new RentDto(this.specId, 0, Number(sessionStorage.getItem("authenticatedUserId")), this.dateOfRent, this.dateOfReturn);
     this.crudService.add(this.rentToAdd, "rents/check").subscribe(
       res => (this.messagesService.addPositiveMessage("Car is available in given time"), this.isAnyCar = true, this.car = res),
       err => this.messagesService.addNegativeMessage("Car is not available in given time")
@@ -80,12 +80,16 @@ export class CarBookingComponent implements OnInit {
   }
 
   addNewRent() {
-    
-    if(this.isAnyCar == false) {
+
+    if (this.isAnyCar == false) {
       return;
     }
     this.rentToAdd.carId = this.car.id;
     this.crudService.add(this.rentToAdd, this.rentURL).subscribe(
-      res => this.messagesService.addPositiveMessage("Rent added successfully"));
+      res => {
+
+        this.messagesService.addPositiveMessage("Rent added successfully");
+        this.router.navigate(["/profile"]);
+      })
   }
 }
