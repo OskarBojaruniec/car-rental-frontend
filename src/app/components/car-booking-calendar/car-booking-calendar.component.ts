@@ -13,12 +13,12 @@ export class CarBookingCalendarComponent implements OnInit {
   rentsURL = 'rents';
   receivedRents: Rent[] = []
   @Output() dateOfRent = new EventEmitter<any>();
-  
+
 
   constructor(private crudService: AdminCrudService) { }
 
   ngOnInit(): void {
-    
+
   }
 
   getDateOfRent($event): void {
@@ -27,8 +27,8 @@ export class CarBookingCalendarComponent implements OnInit {
     const formattedDate = actualDate.toJSON();
     this.dateOfRent.emit(formattedDate);
   }
-  
- 
+
+
 
 
 }

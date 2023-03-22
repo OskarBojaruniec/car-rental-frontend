@@ -5,6 +5,7 @@
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+
 .reviews-slider {
     background-color: green;
     height: 40%;
@@ -14,7 +15,8 @@
     margin: auto;
     font-size: 1.5rem;
 }
-.reviews-slider > p {
+
+.reviews-slider>p {
     width: 70%;
     text-align: center;
     margin-left: 2rem;
@@ -29,12 +31,14 @@
     margin-right: 2rem;
     display: flex;
     flex-direction: row;
-    
+
 }
-.contact-info-container-item{
+
+.contact-info-container-item {
     width: 50%;
-   
+
 }
+
 #contact-text {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.3rem;

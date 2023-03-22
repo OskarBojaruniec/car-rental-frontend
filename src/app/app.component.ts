@@ -9,42 +9,42 @@ import { ViewportScroller } from '@angular/common';
 })
 export class AppComponent {
 
-  constructor(private viewportScroller: ViewportScroller) {}
+  constructor(private viewportScroller: ViewportScroller) { }
 
   goAbout() {
     const about = document.getElementById("about")
 
-    if(about != null){
+    if (about != null) {
       about.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
-  }
+    }
   }
 
   goCars() {
     const cars = document.getElementById("cars")
 
-    if(cars != null){
+    if (cars != null) {
       cars.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
-  }
+    }
   }
 
   goContact() {
-    
+
     const contact = document.getElementById("contact")
 
-    if(contact != null){
+    if (contact != null) {
       contact.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
-  }
+    }
   }
 }

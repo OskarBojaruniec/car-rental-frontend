@@ -15,19 +15,19 @@ export class RegistrationComponent implements OnInit {
   constructor(private registrationService: RegistrationService,
     private router: Router) {
     this.user = new RegistrationDto();
-   }
+  }
 
   ngOnInit(): void {
     const contact = document.getElementById("r-form")
 
-    if(contact != null){
+    if (contact != null) {
       contact.scrollIntoView({
         behavior: "smooth",
         block: "start",
         inline: "nearest"
       });
+    }
   }
-}
 
   onSubmit() {
     this.registrationService.save(this.user).subscribe(result => this.goToHomePage());

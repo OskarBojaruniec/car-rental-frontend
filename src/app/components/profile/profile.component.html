@@ -1,3 +1,31 @@
 <app-header></app-header>
 
-<div class="section-container"></div>
+<div class="sections-containers" id="profile">
+    <p class="section-info" id="reviews">My Account</p>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5" style="background-color:coral;">Last Rents</th>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>License plates</th>
+                <th>Date of rent</th>
+                <th>Date of return</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let rent of rents">
+                <tr>
+                    <td>{{rent.car.specification.brand}}</td>
+                    <td>{{rent.car.specification.model}}</td>
+                    <td>{{rent.car.licensePlate}}</td>
+                    <td>{{rent.dateOfRent}}</td>
+                    <td>{{rent.dateOfReturn}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+
+    </table>
+</div>

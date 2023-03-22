@@ -17,8 +17,10 @@
                     class="header-nav-items-href">Sign in</a></li>
 
 
-            <li *ngIf="isLogged == true" class="header-nav-items"><a routerLink="/profile" class="header-nav-items-href">Profile</a></li>
-            <li *ngIf="isLogged == true" class="header-nav-items"><a routerLink="/" (click)="logout()" class="header-nav-items-href">Logout</a></li>
+            <li *ngIf="isLogged == true" class="header-nav-items"><a routerLink="/profile"
+                    class="header-nav-items-href">Profile</a></li>
+            <li *ngIf="isLogged == true" class="header-nav-items"><a routerLink="/" (click)="logout()"
+                    class="header-nav-items-href">Logout</a></li>
 
         </div>
     </header>

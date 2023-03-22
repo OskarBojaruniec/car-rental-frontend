@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
-import { AuthServiceService } from 'src/app/services/auth-service.service';
+
 
 @Component({
   selector: 'app-content',
@@ -9,18 +8,16 @@ import { AuthServiceService } from 'src/app/services/auth-service.service';
 })
 export class ContentComponent implements OnInit {
 
-  constructor(private authService: AuthServiceService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    let user = this.authService.getLoggedInUserName();
-    console.log(user);
 
   }
 
-  
 
- 
- 
+
+
+
 }
 
 

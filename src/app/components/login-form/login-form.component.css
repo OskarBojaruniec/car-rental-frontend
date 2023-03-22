@@ -1,9 +1,9 @@
-.login-form-container{
+.login-form-container {
     min-height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -29,12 +29,14 @@
     width: 45%;
     border-radius: 10rem;
     border: 0.5rem black solid;
-    
+
 }
+
 label {
     padding: 1rem;
     font-weight: 500;
 }
+
 input {
     padding: 0.5rem;
     border: 0.5rem black solid;
@@ -43,6 +45,7 @@ input {
     font-size: 1rem;
     padding: 0.3rem;
 }
+
 #form-button {
     height: 30%;
     display: flex;
@@ -51,20 +54,24 @@ input {
     margin-right: auto;
     font-size: 2rem;
     align-items: center;
-    background-color:brown;
+    background-color: brown;
     color: aliceblue;
 }
+
 #form-button:hover {
     background-color: lightgreen;
     color: black;
 }
+
 #registration {
-    background-color:bisque;
+    background-color: bisque;
 }
+
 #registration:hover {
     background-color: lightgreen;
 }
-#registration > a{
+
+#registration>a {
     font-size: 2rem;
     text-decoration: none;
     color: black;

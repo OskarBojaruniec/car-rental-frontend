@@ -1,4 +1,3 @@
-
 .mat-form-field {
     width: 100%;
     text-align: center;
@@ -10,15 +9,16 @@
     padding-bottom: 0px;
 }
 
-.mat-datepicker-toggle  {
+.mat-datepicker-toggle {
     color: black;
 }
+
 .rent-form-item {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     text-align: center;
     font-size: 1.3rem;
-    color: black ;
+    color: black;
     padding-bottom: 0px;
 }

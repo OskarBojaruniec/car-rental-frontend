@@ -1,37 +1,41 @@
-@media screen and (max-width: 500px){
-    html{
+@media screen and (max-width: 500px) {
+    html {
         font-size: 18px;
     }
- }
+}
 
- html , body {
+html,
+body {
     background-color: rgb(166, 244, 245);
     margin: 0px;
     font-size: 20px;
     padding: 0;
- }
- body  { 
+}
+
+body {
     overflow: auto;
     overflow-x: hidden;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
- }
+}
 
 
- .website-wrapper {
+.website-wrapper {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 header {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
+
 .header-logo {
     width: 50%;
     height: 40%;
@@ -40,11 +44,13 @@ header {
     align-items: center;
     font-weight: 800;
 }
-.header-logo > p {
+
+.header-logo>p {
     font-size: 2.5rem;
 }
+
 .header-nav {
-    background-color:rgb(233, 244, 118);
+    background-color: rgb(233, 244, 118);
     width: 100vw;
     height: 3rem;
     display: flex;
@@ -58,6 +64,7 @@ header {
     border-top: 0.5rem solid black;
     border-bottom: 0.5rem solid black;
 }
+
 .header-nav-items {
     width: 25%;
     height: 100%;
@@ -68,7 +75,7 @@ header {
     border-right: 0.25rem solid black;
 }
 
-.header-nav-items-href{
+.header-nav-items-href {
     text-decoration: none;
     color: black;
 }
@@ -76,30 +83,34 @@ header {
 .sections-containers {
     width: 100vw;
     min-height: 100vh;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
 .section-info {
     font-size: 1.8rem;
-    background-color:rgb(233, 244, 118);
+    background-color: rgb(233, 244, 118);
     border: 0.4rem solid black;
     border-radius: 10%;
     width: 25%;
 }
+
 .admin-header {
     text-align: center;
 }
+
 .admin-nav {
     background-color: aquamarine;
-    
+
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     font-size: 2rem;
 }
+
 .admin-nav-items {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -108,5 +119,3 @@ header {
     align-items: center;
     justify-content: center;
 }
-
-
